@@ -36,6 +36,15 @@ app.use(session({
 }));
 app.use(flash());
 
+app.get('/*', function(req, res, next){
+  if(typeof req.cookies['connect.sid'] !== 'undefined'){
+    console.log(req.cookies['connect.sid']);
+  }
+
+  next(); // Calls the next middleware
+
+});
+
 app.engine('ejs', engine);
 app.set('view engine', 'ejs');
 
