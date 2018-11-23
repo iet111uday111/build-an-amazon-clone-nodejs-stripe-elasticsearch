@@ -1700,7 +1700,7 @@ please visit Jared Hanson's page on [Patreon](https://www.patreon.com/jaredhanso
 
 Copyright (c) 2011-2015 Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
 
-#### Cookies Parser
+#### connect-mongo
 
 const mongoose = require("mongoose");
 mongoose.Promise = Promise;
@@ -1733,4 +1733,4 @@ app.use(session({
 ![Screenshot](./Screenshots/Screenshot5.png?raw=true "Screenshot")
 
 ### Screenshot 6
-![Screenshot](./Screenshots/Screenshot6.png?raw=true "Screenshot")
+![Screenshot](./Screenshots/Screenshot6.png?raw=true "Screenshot")  
