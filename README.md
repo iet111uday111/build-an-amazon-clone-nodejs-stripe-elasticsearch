@@ -1,6 +1,6 @@
 ## Build an Amazon clone: Nodejs + MongoDB + Stripe Payment
 
-![build-an-amazon-clone-nodejs-stripe-elasticsearch](./Screenshots/Screenshot1.png?raw=true "build-an-amazon-clone-nodejs-stripe-elasticsearch")
+![build-an-amazon-clone-nodejs-stripe-elasticsearch](./Screenshots/Screenshot3.png?raw=true "build-an-amazon-clone-nodejs-stripe-elasticsearch")
 
 ### Node Js
 <p align="center">
@@ -1702,3 +1702,4 @@ Copyright (c) 2011-2015 Jared Hanson <[http://jaredhanson.net/](http://jaredhans
 
 ### Screenshots 
 
+![Cokkies](./Screenshots/Screenshot1.png?raw=true "Cokkies")
