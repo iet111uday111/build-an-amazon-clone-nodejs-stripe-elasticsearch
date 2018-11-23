@@ -1708,9 +1708,6 @@ Copyright (c) 2011-2015 Jared Hanson <[http://jaredhanson.net/](http://jaredhans
 ### Screenshot 2
 ![Screenshot](./Screenshots/Screenshot2.png?raw=true "Screenshot")
 
-### Screenshot 3
-![Screenshot](./Screenshots/Screenshot3.png?raw=true "Screenshot")
-
 ### Screenshot 4
 ![Screenshot](./Screenshots/Screenshot4.png?raw=true "Screenshot")
 
