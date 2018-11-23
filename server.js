@@ -8,14 +8,14 @@ var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var flash = require('express-flash');
 
+var secret = require('./config/secret')
 var User = require('./models/user');
 var mainRoutes = require('./routes/main');
 var userRoutes = require('./routes/user');
 
-var dbUrl = 'mongodb://localhost:27017/ecommerce';
 var app = express();
 
-mongoose.connect(dbUrl, (err, db) => {
+mongoose.connect(secret.database, (err, db) => {
   if(err){
     console.log('Got some issue while connecting to database.', err);
   }else{
@@ -32,7 +32,7 @@ app.use(cookieParser());
 app.use(session({
   resave: true,
   saveUninitialized: true,
-  secret: 'Uday@!#$@!%*^'
+  secret: secret.secretKey
 }));
 app.use(flash());
 
@@ -51,7 +51,7 @@ app.set('view engine', 'ejs');
 app.use(mainRoutes);
 app.use(userRoutes);
 
-app.listen(3000, (err) => {
+app.listen(secret.port, (err) => {
     if(err) throw err;
-    console.log('Server is running');
+    console.log(`Server is running at ${secret.port}`);
 });
