@@ -1717,9 +1717,10 @@ app.use(session({
 
 ```
 
-1. Reading from and writing to the session is done through the req.session object: req.session.userId = req.body.userId
+1. Reading from and writing to the session is done through the req.session object: 
+```req.session.userId = req.body.userId```
 
-2. The session data will be stored in a collection called sessions by defaul
+2. The session data will be stored in a collection called sessions by default.
 
 ## Screenshots 
 
