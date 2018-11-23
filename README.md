@@ -1702,6 +1702,7 @@ Copyright (c) 2011-2015 Jared Hanson <[http://jaredhanson.net/](http://jaredhans
 
 #### connect-mongo
 
+```
 const mongoose = require("mongoose");
 mongoose.Promise = Promise;
 const session = require('express-session');
@@ -1713,6 +1714,8 @@ app.use(session({
     secret: "SOME_SECRET_KEY",
     store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
+
+```
 
 1. Reading from and writing to the session is done through the req.session object: req.session.userId = req.body.userId
 
