@@ -1,8 +1,8 @@
-## Build an Amazon clone: Nodejs + MongoDB + Stripe Payment
+# Build an Amazon clone: Nodejs + MongoDB + Stripe Payment
 
 ![build-an-amazon-clone-nodejs-stripe-elasticsearch](./Screenshots/Screenshot3.png?raw=true "build-an-amazon-clone-nodejs-stripe-elasticsearch")
 
-### Node Js
+# Node Js
 <p align="center">
   <a href="https://nodejs.org/">
     <img
@@ -604,7 +604,7 @@ Other keys used to sign some previous releases:
 [#node.js channel on chat.freenode.net]: https://webchat.freenode.net?channels=node.js&uio=d4
 
 
-### MongoDB
+# MongoDB
 
 MongoDB README
 
@@ -702,7 +702,7 @@ LICENSE
   the Server Side Public License (SSPL) v1. See individual files for
   details.
 
-### Stripe Payment
+# Stripe Payment
 
 This demo features a sample e-commerce store that uses [Stripe Elements](https://stripe.com/docs/elements) and the [Sources API](https://stripe.com/docs/sources) to illustrate how to accept both card payments and additional payment methods on the web.
 
@@ -816,7 +816,7 @@ Use this second URL in your browser to start the demo.
 * Code: [Romain Huet](https://twitter.com/romainhuet) and [Thorsten Schaeff](https://twitter.com/thorwebdev)
 * Design: [Tatiana Van Campenhout](https://twitter.com/tatsvc)
 
-### Express JS
+# Express JS
 
 [![Express Logo](https://i.cloudup.com/zfY6lL7eFa-3000x3000.png)](http://expressjs.com/)
 
@@ -972,7 +972,7 @@ The current lead maintainer is [Douglas Christopher Wilson](https://github.com/d
 [gratipay-image-dougwilson]: https://img.shields.io/gratipay/dougwilson.svg
 [gratipay-url-dougwilson]: https://gratipay.com/dougwilson/
 
-### Mongoose
+# Mongoose
 
 Mongoose is a [MongoDB](https://www.mongodb.org/) object modeling tool designed to work in an asynchronous environment.
 
@@ -1305,7 +1305,7 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-### Elasticsearch
+# Elasticsearch
 
 ### A Distributed RESTful Search Engine
 
@@ -1520,11 +1520,11 @@ h3. Upgrading from older Elasticsearch versions
 
 In order to ensure a smooth upgrade process from earlier versions of Elasticsearch, please see our "upgrade documentation":https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html for more details on the upgrade process.
 
-### Passport JS
+# Passport JS
 
 [![passport banner](http://cdn.auth0.com/img/passport-banner-github.png)](http://passportjs.org)
 
-# Passport
+## Passport
 
 Passport is [Express](http://expressjs.com/)-compatible authentication
 middleware for [Node.js](http://nodejs.org/).
@@ -1700,6 +1700,6 @@ please visit Jared Hanson's page on [Patreon](https://www.patreon.com/jaredhanso
 
 Copyright (c) 2011-2015 Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
 
-### Screenshots 
+## Screenshots 
 
 ![Cokkies](./Screenshots/Screenshot1.png?raw=true "Cokkies")
