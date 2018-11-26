@@ -1,0 +1,11 @@
+1. http://localhost:9200/Product/_search
+
+Show all the Data
+
+2.  http://localhost:9200/products/_search?q=Incredible
+
+Search for Incredible.
+
+3. http://localhost:9200/_cat/indices?v
+
+Shows the list of indices with full Detail.
