@@ -4,9 +4,11 @@
   "description": "This is an ecommerce website",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "debug": "nodemon --inspect-brk server.js"
   },
-  "author": "Arash",
+  "author": "Udayaditya Singh",
   "license": "ISC",
   "dependencies": {
     "async": "^1.5.0",
