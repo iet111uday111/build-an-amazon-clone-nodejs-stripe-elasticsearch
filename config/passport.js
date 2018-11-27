@@ -1,14 +1,18 @@
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var FacebookStrategy = require('passport-facebook').Strategy;
 var User = require('../models/user');
+var config = require('../config/secret');
+var async = require('async');
+var Cart = require('../models/cart');
 
 // serialize and deserialize
-passport.serializeUser(function(user, done) {
+passport.serializeUser(function (user, done) {
   done(null, user._id);
 });
 
-passport.deserializeUser(function(id, done) {
-  User.findById(id, function(err, user) {
+passport.deserializeUser(function (id, done) {
+  User.findById(id, function (err, user) {
     done(err, user);
   });
 });
@@ -19,8 +23,8 @@ passport.use('local-login', new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password',
   passReqToCallback: true
-}, function(req, email, password, done) {
-  User.findOne({ email: email}, function(err, user) {
+}, function (req, email, password, done) {
+  User.findOne({ email: email }, function (err, user) {
     if (err) return done(err);
 
     if (!user) {
@@ -34,8 +38,46 @@ passport.use('local-login', new LocalStrategy({
   });
 }));
 
+passport.use(new FacebookStrategy(config.facebook, function (token, refreshToken, profile, done) {
+  User.findOne({ facebook: profile.id }, function (err, user) {
+    if (err) return next(err);
+    if (user) {
+      return done(null, user);
+    } else {
+      async.waterfall([
+        function (callback) {
+          var newUser = new User();
+          newUser.email = profile._json.email;
+          newUser.facebook = profile.id;
+          newUser.tokens.push({
+            kind: 'facebook',
+            token: token
+          });
+          newUser.profile.name = profile.displayName;
+          // newUser.profile.picture = 'https://graph.facebook.com' + profile.id + '/picture?type=large';
+          newUser.profile.picture = profile.photos[0]['value'];
+          // console.log("New User: ",newUser);
+          newUser.save(function (err) {
+            if (err) throw err;
+            callback(err, newUser)
+          });
+        },
+
+        function (newUser) {
+          var cart = new Cart();
+          cart.owner = newUser._id;
+          cart.save(function(err){
+            if(err) return done(err);
+            return done(err, newUser);
+          });
+        }
+      ]);
+    }
+  });
+}));
+
 //custom function to validate
-exports.isAuthenticated = function(req, res, next) {
+exports.isAuthenticated = function (req, res, next) {
   if (req.isAuthenticated()) {
     return next();
   }

@@ -2,7 +2,7 @@ var config = require('../../config/secret')
 
 $(function() {
 
-  Stripe.setPublishableKey(config.stripePublishablekey);
+  Stripe.setPublishableKey(config.stripePublishablekey || '');
 
   var opts = {
     lines: 13 // The number of lines to draw
