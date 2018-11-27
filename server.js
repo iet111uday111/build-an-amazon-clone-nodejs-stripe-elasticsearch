@@ -15,11 +15,6 @@ var secret = require('./config/secret');
 var User = require('./models/user');
 var Category = require('./models/category');
 
-var mainRoutes = require('./routes/main');
-var userRoutes = require('./routes/user');
-var adminRoutes = require('./routes/admin');
-var apiRoutes = require('./api/api');
-
 var cartLength = require('./middlewares/middleware');
 
 var app = express();
@@ -52,8 +47,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use(cartLength)
-
+app.use(cartLength);
 app.use(function(req, res, next) {
   Category.find({}, function(err, categories) {
     if (err) return next(err);
@@ -64,6 +58,11 @@ app.use(function(req, res, next) {
 
 app.engine('ejs', engine);
 app.set('view engine', 'ejs');
+
+var mainRoutes = require('./routes/main');
+var userRoutes = require('./routes/user');
+var adminRoutes = require('./routes/admin');
+var apiRoutes = require('./api/api');
 
 app.use(mainRoutes);
 app.use(userRoutes);
