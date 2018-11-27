@@ -1,6 +1,7 @@
 var router = require('express').Router();
 var User = require('../models/user');
 var Product = require('../models/product');
+var Cart = require('../models/cart');
 
 function paginate(req, res, next) {
 
@@ -50,6 +51,25 @@ stream.on('error', function(err) {
   console.log(err);
 });
 
+router.post('/product/:product_id', function(req, res, next){
+   Cart.findOne({
+     owner: req.user._id
+   }, function(err, cart){
+     cart.items.push({
+       item: req.body.req_id,
+       quantity: parseFloat(req.body.priceValue),
+       price: parseInt(req.body.quantity)
+     }); 
+     
+     cart.total = (cart.total + parseFloat(req.body.priceValue)).toFixed(2);
+     
+     cart.save(function(err){
+       if(err) return next(err);
+       return res.redirect('/cart');
+     });
+     
+   });
+});
 
 router.post('/search', function(req, res, next) {
   res.redirect('/search?q=' + req.body.q);
